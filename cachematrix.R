@@ -1,5 +1,6 @@
-## makeCacheMatrix is used to Cache data
-## cacheSolve is used to inverse the matrix if no cached data , 
+## makeCacheMatrix is used to Cache data via use the <<
+## two functions, the makeCacheMatrix function is used to cache the data has been calcalted.
+## cacheSolve is used to inverse the matrix if no cached data , and call the make Cachesolve function
 ## if have will call the catached data rather than calcuate it again
 
 ## Cache the data when finish the first calcuate
@@ -7,7 +8,7 @@
 makeCacheMatrix <- function(x = matrix()) {
   i<-NULL
   set<-function(y){
-    x<<-y
+    x<<-y ## <<- this operator 
     i<<-NULL
   }
   get<-function() x
@@ -28,7 +29,7 @@ cacheSolve <- function(x, ...) {
     return(i)
   }
   data<-x$get()
-  i<-solve(data,...)
+  i<-solve(data,...) # solve function will inverse the matrix data.
   x$setinverse(i)
   i
 }
