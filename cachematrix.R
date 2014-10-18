@@ -8,7 +8,8 @@
 makeCacheMatrix <- function(x = matrix()) {
   i<-NULL
   set<-function(y){
-    x<<-y ## <<- this operator 
+    x<<-y ## <<- this operator is used to assign a value to an object in an environment that is different from the
+          ## current environment
     i<<-NULL
   }
   get<-function() x
